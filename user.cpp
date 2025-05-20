@@ -13,6 +13,7 @@
 using namespace std;
 
 const string DATA_DIR = "data/"; // thu muc luu du lieu
+const string DATA_BACKUP_DIR = "data_backup/" // thu muc luu du lieu backup
 
 // khoi tao nguoi dung
 User::User(string u, string p, string f, string e, string ph, string r, string w, string oathKey, bool autoGen)
@@ -109,7 +110,7 @@ bool verifyOTP(const string& secretKey, const string& userOtp) {
 // luu danh sach nguoi dung vao user.txt trong ../data
 void saveUsers(const vector<User>& users, const string& relativeFilename) {
     string filename = DATA_DIR + relativeFilename;
-    string backupFilename = filename + ".bak";
+    string backupFilename = DATA_BACKUP_DIR + relativeFilename + ".bak";
     ofstream file(filename);
     if (!file.is_open()) {
         cerr << "Loi: Khong the mo file " << filename << " de ghi (Dam bao thu muc 'data/' ton tai)." << endl;
@@ -135,7 +136,7 @@ void saveUsers(const vector<User>& users, const string& relativeFilename) {
 // tai danh sach nguoi dung tu tep ../data/user.txt
 vector<User> loadUsers(const string& relativeFilename) {
     string filename = DATA_DIR + relativeFilename;
-    string backupFilename = filename + ".bak";
+    string backupFilename = DATA_BACKUP_DIR + relativeFilename + ".bak";
     vector<User> users;
     ifstream file(filename);
     if (!file.is_open()) {
