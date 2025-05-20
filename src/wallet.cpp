@@ -1,5 +1,5 @@
-#include "wallet.h"
-#include "user.h"
+#include "../class/user.h"
+#include "../class/wallet.h"
 #include <iostream>
 #include <fstream>
 #include <sstream>

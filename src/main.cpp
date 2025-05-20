@@ -1,5 +1,5 @@
-#include "class/user.h"
-#include "class/wallet.h"
+#include "../class/user.h"
+#include "../class/wallet.h"
 #include <iostream>
 #include <vector>
 #include <unordered_map>
