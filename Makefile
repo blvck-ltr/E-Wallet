@@ -8,7 +8,7 @@ CXXFLAGS = -Iinclude -std=c++11 -Wall -Wextra -g
 LDFLAGS = -lssl -lcrypto
 
 # Thu muc chua file nguon
-SRC_DIR = .
+SRC_DIR = src
 
 # Ten file thuc thi
 EXECUTABLE = hethongquanly
