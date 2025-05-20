@@ -13,7 +13,7 @@
 using namespace std;
 
 const string DATA_DIR = "data/"; // thu muc luu du lieu
-const string DATA_BACKUP_DIR = "data_backup/" // thu muc luu du lieu backup
+const string DATA_BACKUP_DIR = "data_backup/"; // thu muc luu du lieu backup
 
 // khoi tao nguoi dung
 User::User(string u, string p, string f, string e, string ph, string r, string w, string oathKey, bool autoGen)
@@ -215,8 +215,9 @@ User registerUser(vector<User>& users, bool isAdminRegistration) {
     cout << "** LUU Y: Day la lan duy nhat khoa nay duoc hien thi. Hay luu lai can than! **" << endl;
     cout << "--------------------------------------------" << endl;
     cout << "Nhan Enter de tiep tuc sau khi da luu khoa...";
-    cin.ignore();
+    cin.ignore(numeric_limits<streamsize>::max(), '\n');
     cin.get();
+    cout << "\nDa luu khoa bi mat. Dang tiep tuc...\n";
 
     string hashedPassword = hashPassword(password);
     if (hashedPassword.empty()) {
@@ -345,7 +346,7 @@ void updateProfile(User& user, vector<User>& users) {
     cout << "Nhap so dien thoai moi (hien tai: " << user.phone << "): ";
     cin >> phone;
     string otp = generateSimulatedOTP();
-    cout << "Ma OTP (mo phong gui den email/phone cu " << user.email << "/" << user.phone << "): " << otp << "\n";
+    cout << "Ma OTP (mo phong gui den email/phone cua " << user.email << "/" << user.phone << "): " << otp << "\n";
     string inputOtp;
     cout << "Nhap ma OTP: ";
     cin >> inputOtp;

@@ -2,7 +2,7 @@
 CXX = g++
 
 # Co bien dich:
-CXXFLAGS = -Iinclude -std=c++11 -Wall -Wextra -g
+CXXFLAGS = -I../class -std=c++11 -Wall -Wextra -g
 
 # Co lien ket thu vien:
 LDFLAGS = -lssl -lcrypto
@@ -25,13 +25,13 @@ $(EXECUTABLE): $(OBJECTS)
 	@echo "Bien dich hoan tat. Chay chương trinh bang lenh: ./$(EXECUTABLE)"
 
 # Bien dich .cpp thanh .o
-$(SRC_DIR)/main.cpp.o: $(SRC_DIR)/main.cpp include/user.h include/wallet.h
+$(SRC_DIR)/main.cpp.o: $(SRC_DIR)/main.cpp ../class/user.h ../class/wallet.h
 	$(CXX) $(CXXFLAGS) -c $(SRC_DIR)/main.cpp -o $(SRC_DIR)/main.cpp.o
 
-$(SRC_DIR)/user.cpp.o: $(SRC_DIR)/user.cpp include/user.h include/wallet.h
+$(SRC_DIR)/user.cpp.o: $(SRC_DIR)/user.cpp ../class/user.h ../class/wallet.h
 	$(CXX) $(CXXFLAGS) -c $(SRC_DIR)/user.cpp -o $(SRC_DIR)/user.cpp.o
 
-$(SRC_DIR)/wallet.cpp.o: $(SRC_DIR)/wallet.cpp include/wallet.h include/user.h
+$(SRC_DIR)/wallet.cpp.o: $(SRC_DIR)/wallet.cpp ../class/wallet.h ../class/user.h
 	$(CXX) $(CXXFLAGS) -c $(SRC_DIR)/wallet.cpp -o $(SRC_DIR)/wallet.cpp.o
 
 # Don dep

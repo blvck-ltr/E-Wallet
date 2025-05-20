@@ -37,3 +37,5 @@ void changePassword(User& user, std::vector<User>& users); // doi passwd
 void updateProfile(User& user, std::vector<User>& users); // update thong tin nguoi dung
 void viewUsers(const std::vector<User>& users); // xem danh sach nguoi dung, chi danh cho admin
 void adminEditUser(std::vector<User>& users); // chinh sua thong tin nguoi dung, chi danh cho admin
+
+#endif
