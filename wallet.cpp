@@ -19,7 +19,6 @@ Wallet::Wallet(string id, double b) : walletID(id), balance(b) {}
 void saveWallets(const vector<Wallet>& wallets, const string& relativeFilename) {
     string filename = DATA_DIR + relativeFilename;
     string backupFilename = DATA_DIR_BACKUP + relativeFilename + ".bak";
-    // string backupFilename = filename + ".bak";
     ofstream file(filename);
     if (!file.is_open()) {
         cerr << "Loi: Khong the mo file " << filename << " de ghi (Dam bao thu muc 'data/' ton tai)." << endl;
@@ -46,7 +45,6 @@ void saveWallets(const vector<Wallet>& wallets, const string& relativeFilename) 
 vector<Wallet> loadWallets(const string& relativeFilename) {
     string filename = DATA_DIR + relativeFilename;
     string backupFilename = DATA_DIR_BACKUP + relativeFilename + ".bak";
-    // string backupFilename = filename + ".bak";
     vector<Wallet> wallets;
     ifstream file(filename);
     if (!file.is_open()) {
