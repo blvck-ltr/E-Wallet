@@ -1,5 +1,4 @@
-# Hệ Thống Quản Lý Người Dùng và Ví Điểm Thưởng
-
+# E-Wallet
 ## Giới thiệu thành viên tham gia:
 
 | **Họ Tên** | **Mã sinh viên** | **Vai trò** | **Công việc được giao** |
