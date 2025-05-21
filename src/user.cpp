@@ -9,6 +9,10 @@
 #include <openssl/evp.h>
 #include <openssl/sha.h>
 #include <cstdio>
+#include <limits>
+#include <functional>
+#include <chrono>
+#include <thread>
 
 using namespace std;
 
@@ -91,7 +95,10 @@ string generateSimulatedOTP() {
 // xac thuc otp
 bool verifyOTP(const string& secretKey, const string& userOtp) {
     string command = "oathtool --totp -b \"" + secretKey + "\"";
-    unique_ptr<FILE, decltype(&pclose)> pipe(popen(command.c_str(), "r"), pclose);
+    // unique_ptr<FILE, decltype(&pclose)> pipe(popen(command.c_str(), "r"), pclose);
+    using pipe_ptr = std::unique_ptr<FILE, std::function<void(FILE*)>>;
+    pipe_ptr pipe(popen(command.c_str(), "r"), [](FILE* f) { if (f) pclose(f); });
+
     if (!pipe) {
         cerr << "Loi: Khong the chay lenh oathtool." << endl;
         return false;
@@ -228,6 +235,7 @@ User registerUser(vector<User>& users, bool isAdminRegistration) {
     User newUser(username, hashedPassword, fullName, email, phone, role, walletID, oathSecretKey, autoGenPassword);
     users.push_back(newUser);
     cout << "Dang ky tai khoan thanh cong cho: " << username << endl;
+    std::this_thread::sleep_for(std::chrono::seconds(1));
     return newUser;
 }
 

@@ -11,7 +11,7 @@ LDFLAGS = -lssl -lcrypto
 SRC_DIR = src
 
 # Ten file thuc thi
-EXECUTABLE = hethongquanly
+EXECUTABLE = E-Wallet
 SOURCES = $(SRC_DIR)/main.cpp $(SRC_DIR)/user.cpp $(SRC_DIR)/wallet.cpp
 
 # Tao file object (.o)
