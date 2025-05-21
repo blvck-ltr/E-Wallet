@@ -6,7 +6,7 @@
 | --- | --- | --- | --- |
 | Lê Văn Trường | K24DTCN240 | Lập trình viên | Thiết kế cấu trúc hệ thống, lập trình các chức năng liên quan đến User, testing, pentesting, giới thiệu và bảo vệ sản phẩm |
 | Lê Bá Anh Đức | K24DTCN180 | Lập trình viên | Thiết kế cấu trúc hệ thống, lập trình các chức năng liên quan đến Wallet, testing |
-| Phạm Đoàn Minh Quyết | K24DTCN222 | Lập trình viên | Hợp nhất mã nguồn, lập trình main.cpp, testing |
+| Phạm Đoàn Minh Quyết | K24DTCN222 | Lập trình viên | Thiết kế cấu trúc hệ thống, hợp nhất mã nguồn, lập trình main.cpp, testing |
 
 Đây là một chương trình C++ đơn giản mô phỏng hệ thống quản lý người dùng và ví điểm thưởng, tích hợp các tính năng bảo mật cơ bản như băm mật khẩu (SHA-256) và xác thực hai yếu tố (TOTP) sử dụng thư viện OpenSSL và công cụ OATH Toolkit.
 
